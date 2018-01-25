@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+ /* #top-image { 
+ background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('http://img.hb.aicdn.com/d10256ca37deac8a3b0ee99fb152440b84c1630b891a5-K2Qxlr')
+        no-repeat fixed;
+        position:fixed ; 
+        top:0; width:100%;
+        z-index:0; 
+        height:100%; } */
+        .screen {
+            height: 100vh;
+            overflow: hidden;
+        }
+        img {
+            width: 120%;
+            margin-left: -10%;
+            margin-top: -10%
+        }
+        li {
+            font-size: 80px;
+            color: white;
+        }
+        .text {
+            width: 400px;
+            height: 400px;
+            border-radius: 20px;
+            left: 50% !important;
+            top: 50% !important;
+            /* transform: translate(-50%,-50%) !important */
+            margin-left: -127px;
+            margin-right: -56px;
+            margin-top: -50px;
+            font-weight: bold;
+            text-shadow: #00000073 0 12px 24px;
+        } 
+       
+        li img {
+            opacity: .7;
+        }
+        body {
+            background-color: #000000;
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <div id="top-image">
+        <ul id="scene" class="screen">
+            
+            <li data-depth="0.7">
+                <img src="http://img.hb.aicdn.com/d10256ca37deac8a3b0ee99fb152440b84c1630b891a5-K2Qxlr" alt="">
+            </li>
+            <li class="text" data-depth="0.3">Daskys</li>
+        </ul>
+    </div>
+
+    <script src="./jquery.min.js"></script>
+    <script src="./parallax.min.js"></script>
+    <script>
+        var scene = document.getElementById('scene')
+        var parallaxInstance = new Parallax(scene, {
+                relativeInput : true,
+                clipRelativeInput : false,
+                hoverOnly : true,
+                calibrateX : false,
+                calibrateY: true,
+                invertX : false,
+                invertY : true,
+                limitX : false,
+                limitY: 10,
+                scalarX : 2, 
+                scalarY: 8,
+                frictionX:0.2,
+        })
+    </script>
+</body>
+
+</html>
